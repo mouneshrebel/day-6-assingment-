@@ -1,0 +1,216 @@
+The class Movie is stated below. An instance of class Movie represents a film. This class has the following three properties:
+
+title, which is a String representing the title of the movie
+studio, which is a String representing the studio that made the movie
+rating, which is a String representing the rating of the movie (i.e. PG­13, R, etc)
+
+a) Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio, and 
+a String representing the rating as its arguments, and sets the respective class properties to these values.
+
+b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+
+c) Write a method getPG, which takes an array of base type Movie as its argument, and returns a new array of only those movies in the input array with a rating of "PG". 
+You may assume the input array is full of Movie instances. The returned array need not be full.
+
+d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”
+
+
+
+
+
+CREATE A MOVIE CLASS
+ 
+class Movie {
+    constructor(title= '', studio = '', rating = 'PG') {
+       this.title = title;
+       
+    }
+ 
+    getPG(movies = [], rating = '') {
+       return movies.filter((m) => m.rating === rating);
+    }
+}
+ 
+// SOLUTION FOR A
+const petta = new Movie('petta');
+const leo = new Movie('Leo');
+const vikram = new Movie('Vikram');
+const avatar = new Movie('Avatar: The water way');
+const avengers = new Movie('The avengers: End Game');
+ 
+const moviesArray = [petta, leo, vikram, avatar, avengers];
+ 
+console.log(movieArray));
+console.log((moviesArray,))
+
+ 
+ 
+CREATE B " PG"
+ 
+
+const casionRoyaleMovie = new Movie('Casino Royale', 'Eon Productionclass Movie {
+    constructor( rating = 'PG') {
+       
+       this.rating = rating;
+    }
+ 
+    getPG(movies = [], rating = '') {
+       return movies.filter((m) => m.rating === rating);
+    }
+}
+ 
+// SOLUTION FOR B
+
+const casionRoyaleMovie = new Movie('Casino Royale');
+const leo = new Movie('Leo');
+const vikram = new Movie('Vikram');
+const avatar = new Movie('Avatar: The water way');
+const avengers = new Movie('The avengers: End Game');
+ 
+const moviesArray = [casionRoyaleMovie, leo, vikram, avatar, avengers];
+
+ 
+
+console.log(casionRoyaleMovie.getPG(moviesArray, 'R'));
+console.log(casionRoyaleMovie.getPG(moviesArray, 'PG'));
+
+
+CREATE D MOVIE CLASS
+ 
+class Movie {
+    constructor(title= '', studio = '', rating = 'PG') {
+       this.title = title;
+       this.studio = studio;
+       this.rating = rating;
+    }
+ 
+    getPG(movies = [], rating = '') {
+       return movies.filter((m) => m.rating === rating);
+    }
+}
+ 
+// SOLUTION FOR D
+const casionRoyaleMovie = new Movie('Casino Royale', 'Eon Productions', 'PG13');
+const leo = new Movie('Leo', 'LCU', 'PG');
+const vikram = new Movie('Vikram', 'Vijay', 'PG');
+const avatar = new Movie('Avatar: The water way', 'EROS', 'PG13');
+const avengers = new Movie('The avengers: End Game', 'LCU', 'PG');
+ 
+const moviesArray = [casionRoyaleMovie, leo, vikram, avatar, avengers];
+ 
+console.log(casionRoyaleMovie.getPG(moviesArray, 'R'));
+console.log(casionRoyaleMovie.getPG(moviesArray, 'PG'));
+
+CREATE C MOVIE CLASS
+ 
+class Movie {
+    constructor(title= '', studio = '', rating = 'PG') {
+      
+    }
+ 
+    getPG(movies = [], rating = '') {
+       return movies.filter((m) => m.rating === rating);
+    }
+}
+ 
+// SOLUTION FOR C
+const casionRoyaleMovie = new Movie('Casino Royale', 'Eon Productions', 'PG13');
+const leo = new Movie('Leo', 'LCU', 'PG');
+const vikram = new Movie('Vikram', 'Vijay', 'PG');
+const avatar = new Movie('Avatar: The water way', 'EROS', 'PG13');
+const avengers = new Movie('The avengers: End Game', 'LCU', 'PG');
+ 
+const moviesArray = [casionRoyaleMovie, leo, vikram, avatar, avengers];
+ 
+console.log(casionRoyaleMovie.getPG(moviesArray, 'R'));
+console.log(casionRoyaleMovie.getPG(moviesArray, 'PG'));
+ 
+
+
+Convert the UML diagram to Typescript class. - use number for double
+
+<div
+      style="width: 100px; height: 100px; background: red; border-radius: 50%"
+    ></div>
+</article>
+    <div
+      placeholder="Enter you phone number"
+      style="background: green; width: 100vw; height: 500px; padding: 10px"
+    >
+      <input type="number" placeholder="Enter your phone number" /><br />
+      <input placeholder="Enter your email" /><br />
+      <input type="email" placeholder="Enter your email" /><br />
+      <input type="password" placeholder="Enter your password" /><br />
+      <button>Submit Form</button>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="https://www.google.com">Google</a>
+      </nav>
+    </div>
+    <script src="./XMLHttpRequest.js"></script>
+  </body>
+</html>
+ 
+
+Write a “person” class to hold all the details.
+
+var obj = {name: 'MOUNESH', age: 20};
+var obj2 = {...obj};
+obj.qualification = 'B.E';
+console.log(obj);
+console.log(obj2)
+
+ CONSOLE RESULT
+{
+  age: 20,
+  name: "MOUNESH",
+  qualification: "B.E"
+}
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
