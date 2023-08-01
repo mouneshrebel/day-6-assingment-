@@ -1,0 +1,311 @@
+1.Create a class Movie and prints movie details whose rating is PG
+class Movie
+{
+ //constructor for class Movie will set rating to "PG" as default when no rating is provided.
+    constructor(title=" ",studio=" ",rating="PG")
+    {
+        this.title=title;
+        this.studio=studio;
+        this.rating=rating;
+    }
+//getPg method returns a new array of only those movies in the input array with a rating of "PG"
+    getPG(movies)
+    {
+       // Using filter 
+       // return movies.filter(movie => movie.rating==="PG")
+	// Using for loop
+       let n=[];
+       for(let i=0;i<movies.length;i++)
+       {
+           if(movies[i].rating==="PG")
+           {
+               n.push(movies[i]) 
+           }
+       }
+       return n;
+    }
+}
+let obj1=new Movie();
+let zillakong=new Movie("Godzilla VS Kong","Warner Bros","PG13");
+let toystory=new Movie("Toy Story","Pixar","G");
+let rat=new Movie("Ratatouille","Pixar","G");
+let tangled=new Movie("Tangled","Walt Disney","PG");
+let zoo=new Movie("Zootopia","Walt Disney","PG")
+let incredible=new Movie("Incredibles 2","Pixar","PG");
+let movie_array=[zillakong,toystory,rat,tangled,zoo,incredible]
+//creates an instance of the class Movie with title “Casino Royale”,studio “Eon Productions”,rating “PG­13”
+let casino=new Movie("Casino Royale","Eon Production","PG13")
+movie_array.push(casino);
+let pgmovies=obj1.getPG(movie_array);
+console.log("Movies with rating PG ",pgmovies);
+//Output
+/*Movies with rating PG  [
+  Movie { title: 'Tangled', studio: 'Walt Disney', rating: 'PG' },
+  Movie { title: 'Zootopia', studio: 'Walt Disney', rating: 'PG' },
+  Movie { title: 'Incredibles 2', studio: 'Pixar', rating: 'PG' }
+]*/
+
+2.Create a class Circle
+class Circle
+{
+constructor(radius=1.0,color="red")
+{
+this.radius=radius;
+this.color=color;
+}
+Circle()
+{
+console.log(this.radius,this.color)
+}
+circle(radius)
+{
+console.log("Radius ",radius);
+}
+Crcle(radius,color)
+{
+console.log("Radius ",radius);
+console.log("Color",color);
+}
+getRadius()
+{
+return this.radius;
+}
+getColor()
+{
+return this.color;
+}
+getArea()
+{ let r=this.radius;
+ let area=3.14*r*r
+ return area.toFixed(2);;
+}
+getCircumference()
+{
+let r=this.radius;
+let circum=2*3.14*r;
+return circum.toFixed(2);;
+}
+setRadius(r)
+{
+this.radius=r;
+}
+setColor(c)
+{
+this.color=c;
+}
+}
+let obj1=new Circle();
+obj1.Circle();
+obj1.circle(10);
+obj1.Crcle(20,"white");
+let obj2=new Circle(5,"blue")
+console.log(obj2.getRadius());
+console.log(obj2.getColor());
+let obj3=new Circle();
+obj3.setRadius(7);
+obj3.setColor("yellow");
+console.log(obj3.Circle());
+console.log(obj2.getArea());
+console.log(obj2.getCircumference());
+//Output
+/*1 red
+Radius  10
+Radius  20
+Color white
+5
+blue
+7 yellow
+undefined
+78.50
+31.40*/
+
+
+3.Create a class Person
+class Person
+{
+    constructor(name="",age=0,address="",qualifi="",blood_grp="",skills=[])
+    {
+        this.name=name;
+        this.age=age;
+        this.address=address;
+        this.qualifi=qualifi;
+        this.blood_grp=blood_grp;
+        this.skills=skills;
+    }
+    changeAddress(add)
+    {
+        this.address=add;
+    }
+    checkBlood(person_array,blood)
+    {
+        for(let i=0;i<person_array.length;i++)
+        {
+            if(blood===person_array[i].blood_grp)
+            {
+              console.log("Available ",blood);
+              break;
+            }
+        }
+    }
+    skillCount()
+    {
+        let count=this.skills.length;
+        console.log("Skill count :",count) ;
+    }
+    checkDegree()
+    {
+        let degree=this.qualifi;
+        let first=degree[0];
+        if(first=='B'||first =='b')
+        {
+            console.log("Bachelor's Degree")
+        }
+        if(first=='M'||first=='m')
+        {
+              console.log("Master's Degree")
+        }
+        if(first=='P'|| first=="p")
+        {
+              console.log("Docterate")
+        }
+    }
+    viewProfile()
+    {
+        console.log("Name ",this.name)
+        console.log("Age ",this.age)
+        console.log("Qualification ",this.qualifi)
+        console.log("Address ",this.address)
+        console.log("Skills ",this.skills)
+        console.log("Blood Group ",this.blood_grp)
+    }
+}
+let p1=new Person("xyz",22,"chennai","B.Tech IT","O+VE",["Java","Python","C","HTML","Javascript"]);
+p1.viewProfile();
+p1.checkDegree();
+p1.skillCount();
+let p2=new Person("xyz",22,"chennai","B.Tech IT","O+VE",["Java","Python","Javascript"]);
+let p3=new Person("abc",22,"delhi","B.E CSE IT","AB+VE",["Java","C","HTML","Javascript"]);
+let p4=new Person("pqr",22,"bangalore","M.Tech IT","O-VE",["Java","Python","HTML","Javascript","Hacking"]);
+let p5=new Person("thv",22,"coimbatore","Ph.D","B+VE",["Java","Python","C","HTML"]);
+let parray=[p1,p2,p3,p4,p5];
+p5.checkDegree();
+let obj=new Person();
+obj.checkBlood(parray,"O+VE")
+//Output
+/*Name  xyz
+Age  22
+Qualification  B.Tech IT
+Address  chennai
+Skills  [ 'Java', 'Python', 'C', 'HTML', 'Javascript' ]
+Blood Group  O+VE
+Bachelor's Degree
+Skill count : 5
+Docterate
+Available  O+VE*/
+
+
+4.Create a class Uber to calculate price of journey
+class Uber
+{
+    constructor(travel_time=0,distance_travelled=0,waiting_time=0,peak_hours="no")
+    {
+        this.travel_time=travel_time
+        this.distance_travelled=distance_travelled
+        this.waiting_time=waiting_time
+        this.peak_hours=peak_hours
+    }
+    checkWait()
+    {
+        if(this.waiting_time>=10)
+        {
+            return this.waiting_time*15
+        }
+        else{
+        return 0
+        }
+    }
+    checkPeak()
+    {
+        let peak;
+        if(this.peak_hours=="yes")
+        {
+             peak=50;
+            return peak;
+        }
+        else
+        {
+            return 0
+        }
+    }
+    checkTime()
+    {
+        return this.travel_time*500;
+    }
+    checkDistance()
+    {
+        return this.distance_travelled*15;
+    }
+    priceCalculate()
+    {
+        let time_cost=this.checkTime();
+        let distance_cost=this.checkDistance();
+       let wait_cost=0
+       wait_cost=this.checkWait();
+       let peak_cost=0
+       peak_cost=this.checkPeak();
+       let price=0;
+       price=time_cost+distance_cost+wait_cost+peak_cost;
+       return price;
+    }
+    viewBill(customer_name)
+    {
+        console.log("-------RECEIPT-------")
+        console.log("Customer Name: ",customer_name);
+        console.log("Cost of Distance Travelled: ",this.checkDistance());
+        console.log("Cost of Time spent: ",this.checkTime());
+        console.log("Waiting Charges: ",this.checkWait());
+        console.log("Peak Hour Charges: ",this.checkPeak());
+        console.log("Total Cost:",this.priceCalculate())
+        console.log("------THE END------")
+        
+    }
+}
+//travelling time in hrs,waiting time in minutes
+let c1=new Uber(3,45,20,"yes");
+console.log("Total price for journey:",c1.priceCalculate());
+c1.viewBill("Park Jimin");
+let c2=new Uber(4,50,30);
+console.log("Total price for journey:",c2.priceCalculate());
+c2.viewBill("Jung Hoseok");
+let c3=new Uber(3,50);
+console.log("Total price for journey:",c3.priceCalculate());
+c3.viewBill("Suga");
+//Output
+/*Total price for journey: 2525
+-------RECEIPT-------
+Customer Name:  Park Jimin
+Cost of Distance Travelled:  675
+Cost of Time spent:  1500
+Waiting Charges:  300
+Peak Hour Charges:  50
+Total Cost: 2525
+------THE END------
+Total price for journey: 3200
+-------RECEIPT-------
+Customer Name:  Jung Hoseok
+Cost of Distance Travelled:  750
+Cost of Time spent:  2000
+Waiting Charges:  450
+Peak Hour Charges:  0
+Total Cost: 3200
+------THE END------
+Total price for journey: 2250
+-------RECEIPT-------
+Customer Name:  Suga
+Cost of Distance Travelled:  750
+Cost of Time spent:  1500
+Waiting Charges:  0
+Peak Hour Charges:  0
+Total Cost: 2250
+------THE END------
+*/
